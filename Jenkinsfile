@@ -16,11 +16,11 @@ node {
 		stage('Deploy') {
 			sh './jenkins/scripts/deliver.sh'
 			
-			echo 'Aplikasi telah berhasil dijalankan!'
+			echo 'Aplikasi telah berhasil dideploy!'
 
 			sleep 60
 
-			echo 'Proses deployment aplikasi Java App akan segera ditutup.'
+			echo 'Aplikasi Java App akan segera ditutup.'
 			echo 'Menutup aplikasi Java App...'
 		}
 	}
