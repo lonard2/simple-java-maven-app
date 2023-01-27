@@ -8,5 +8,20 @@ node {
 		stage('Test') {
 			sh 'mvn test'
 		}
+
+		stage('Manual Approval') {
+			input message 'Lanjutkan ke tahap Deploy?'
+		}
+
+		stage('Deploy') {
+			sh './jenkins/scripts/deliver.sh'
+			
+			echo 'Aplikasi telah berhasil dijalankan!'
+
+			sleep 60
+
+			echo 'Proses deployment aplikasi Java App akan segera ditutup.'
+			echo 'Menutup aplikasi Java App...'
+		}
 	}
 }
